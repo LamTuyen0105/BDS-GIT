@@ -11,6 +11,8 @@ namespace RealEstate.Data.Entity
         public string Prefix { get; set; }
         public int DistrictId { get; set; }
 
+        public List<Property> Properties { get; set; }
+
         public District District { get; set; }
     }
 }

@@ -9,7 +9,9 @@ namespace RealEstate.Data.Entity
     public class Property : BaseEntity
     {
         public string Title { get; set; }
-        public string Address { get; set; }
+        public string ApartmentNumber { get; set; }
+        public string StreetNames { get; set; }
+        public int WardId { get; set; }
         public string Image { get; set; }
         public double Area { get; set; }
         public double? AreaFrom { get; set; }
@@ -21,8 +23,8 @@ namespace RealEstate.Data.Entity
         public decimal? PriceFrom { get; set; }
         public decimal? PriceTo { get; set; }
         public string Description { get; set; }
-        public Status? EvaluationStatus { get; set; }
-        public string LegalPapers { get; set; }
+        public int? EvaluationStatusId { get; set; }
+        public int? LegalPapersId { get; set; }
         public int TypeOfPropertyId { get; set; }
         public int TypeOfTransactionId { get; set; }
         public DateTime StartDate { get; set; }
@@ -31,16 +33,21 @@ namespace RealEstate.Data.Entity
         public int? NumberOfBedrooms { get; set; }
         public int? NumberOfWCs { get; set; }
         public Status Status { get; set; }
-        public string HouseDirection { get; set; }
+        public int? HouseDirectionId { get; set; }
         public double? Lat { get; set; }
         public double? Lng { get; set; }
         public string ContactName { get; set; }
         public string EmailContact { get; set; }
         public string ContactPhone { get; set; }
-        public int? UserID { get; set; }
+        public Guid? UserID { get; set; }
 
+        public Ward Ward { get; set; }
         public TypeOfProperty TypeOfProperty { get; set; }
         public TypeOfTransaction TypeOfTransaction { get; set; }
+        public Direction Direction { get; set; }
+        public LegalPaper LegalPaper { get; set; }
+        public EvaluationStatus EvaluationStatus { get; set; }
+        public AppUser AppUser { get; set; }
 
         public List<ImageProperty> ImageProperties { get; set; }
     }

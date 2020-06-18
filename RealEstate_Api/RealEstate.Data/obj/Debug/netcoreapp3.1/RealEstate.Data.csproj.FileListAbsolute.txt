@@ -10,3 +10,15 @@ D:\Information_Technology\Job\RealEstate\RealEstate_Api\RealEstate_Api\RealEstat
 D:\Information_Technology\Job\RealEstate\RealEstate_Api\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.csproj.CoreCompileInputs.cache
 D:\Information_Technology\Job\RealEstate\RealEstate_Api\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.dll
 D:\Information_Technology\Job\RealEstate\RealEstate_Api\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.pdb
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\bin\Debug\netcoreapp3.1\RealEstate.Data.deps.json
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\bin\Debug\netcoreapp3.1\RealEstate.Data.runtimeconfig.json
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\bin\Debug\netcoreapp3.1\RealEstate.Data.runtimeconfig.dev.json
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\bin\Debug\netcoreapp3.1\RealEstate.Data.dll
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\bin\Debug\netcoreapp3.1\RealEstate.Data.pdb
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.csprojAssemblyReference.cache
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.AssemblyInfoInputs.cache
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.AssemblyInfo.cs
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.dll
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.pdb
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.genruntimeconfig.cache
+D:\Information_Technology\Practice\Github\BDS-GIT\RealEstate_Api\RealEstate.Data\obj\Debug\netcoreapp3.1\RealEstate.Data.csproj.CoreCompileInputs.cache

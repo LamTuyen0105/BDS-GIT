@@ -14,6 +14,5 @@ namespace RealEstate.Data.Entity
         public Province Province { get; set; }
 
         public List<Ward> Wards { get; set; }
-        public List<Street> Streets { get; set; }
     }
 }

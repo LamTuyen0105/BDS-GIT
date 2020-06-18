@@ -23,14 +23,22 @@ namespace RealEstate.Data.Configurations
             builder.Property(x => x.TypeOfPropertyId).IsRequired();
             builder.Property(x => x.TypeOfTransactionId).IsRequired();
             builder.Property(x => x.Title).HasMaxLength(200).IsRequired();
-            builder.Property(x => x.Address).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.ApartmentNumber).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.StreetNames).HasMaxLength(200).IsRequired();
             builder.Property(x => x.Image).HasMaxLength(200).IsRequired();
-            builder.Property(x => x.Description).HasMaxLength(1000).IsRequired();
-            builder.Property(x => x.LegalPapers).IsRequired(false);
-            builder.Property(x => x.HouseDirection).IsRequired(false);
+            builder.Property(x => x.Description).IsRequired();
+            builder.Property(x => x.ContactName).HasMaxLength(100);
+            builder.Property(x => x.EmailContact).HasMaxLength(100);
+            builder.Property(x => x.ContactPhone).HasMaxLength(100);
             builder.Property(x => x.StartDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.Status).HasDefaultValue(Status.UnApproved);
             builder.HasOne(x => x.TypeOfProperty).WithMany(x => x.Properties).HasForeignKey(x => x.TypeOfPropertyId);
+            builder.HasOne(x => x.TypeOfTransaction).WithMany(x => x.Properties).HasForeignKey(x => x.TypeOfTransactionId);
+            builder.HasOne(x => x.Ward).WithMany(x => x.Properties).HasForeignKey(x => x.WardId);
+            builder.HasOne(x => x.AppUser).WithMany(x => x.Properties).HasForeignKey(x => x.UserID);
+            builder.HasOne(x => x.Direction).WithMany(x => x.Properties).HasForeignKey(x => x.HouseDirectionId);
+            builder.HasOne(x => x.EvaluationStatus).WithMany(x => x.Properties).HasForeignKey(x => x.EvaluationStatusId);
+            builder.HasOne(x => x.LegalPaper).WithMany(x => x.Properties).HasForeignKey(x => x.LegalPapersId);
         }
     }
 }
