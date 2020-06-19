@@ -14,5 +14,7 @@ namespace RealEstate.Data.Entity
         public string IdentityNumber { get; set; }
 
         public List<Property> Properties { get; set; }
+        public List<Favorite> Favorites { get; set; }
+
     }
 }

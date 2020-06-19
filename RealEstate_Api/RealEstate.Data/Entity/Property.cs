@@ -50,5 +50,7 @@ namespace RealEstate.Data.Entity
         public AppUser AppUser { get; set; }
 
         public List<ImageProperty> ImageProperties { get; set; }
+        public List<Favorite> Favorites { get; set; }
+
     }
 }

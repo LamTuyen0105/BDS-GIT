@@ -22,8 +22,10 @@ namespace RealEstate.Data.EF
             modelBuilder.ApplyConfiguration(new DirectionConfiguration());
             modelBuilder.ApplyConfiguration(new DistrictConfiguration());
             modelBuilder.ApplyConfiguration(new EvaluationStatusConfiguration());
+            modelBuilder.ApplyConfiguration(new FavoriteConfiguration());
             modelBuilder.ApplyConfiguration(new ImagePropertyConfiguration());
             modelBuilder.ApplyConfiguration(new LegalPaperConfiguration());
+            modelBuilder.ApplyConfiguration(new NewsConfiguration());
             modelBuilder.ApplyConfiguration(new PropertyConfiguration());
             modelBuilder.ApplyConfiguration(new ProvinceConfiguration());
             modelBuilder.ApplyConfiguration(new TypeOfPropertyConfiguration());
@@ -43,8 +45,10 @@ namespace RealEstate.Data.EF
         public DbSet<Direction> Directions { get; set; }
         public DbSet<District> Districts { get; set; }
         public DbSet<EvaluationStatus> EvaluationStatuses { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
         public DbSet<ImageProperty> ImageProperties { get; set; }
         public DbSet<LegalPaper> LegalPapers { get; set; }
+        public DbSet<News> News { get; set; }
         public DbSet<Property> Properties { get; set; }
         public DbSet<Province> Provinces { get; set; }
         public DbSet<TypeOfProperty> TypeOfProperties { get; set; }
