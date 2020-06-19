@@ -66,6 +66,7 @@ namespace RealEstate.Data.Extensions
                 PasswordHash = hasher.HashPassword(null, "Admin123"),
                 SecurityStamp = string.Empty,
                 FullName = "Tôn Võ Thủy Tiên",
+                Avatar = "assets/img/profile.png",
                 Address = "85/4 Nguyễn Thế Truyện, phường Tân Sơn Nhì, quận Tân Phú",
                 Gender = Gender.Female,
                 IdentityNumber = "0123456789"

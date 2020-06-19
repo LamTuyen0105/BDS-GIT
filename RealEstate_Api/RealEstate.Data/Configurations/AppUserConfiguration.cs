@@ -13,6 +13,7 @@ namespace RealEstate.Data.Configurations
         {
             builder.ToTable("AppUsers");
             builder.Property(x => x.FullName).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.Avatar).IsRequired();
             builder.Property(x => x.Address).IsRequired();
             builder.Property(x => x.Gender).IsRequired();
             builder.Property(x => x.IdentityNumber).HasMaxLength(10).IsRequired();
