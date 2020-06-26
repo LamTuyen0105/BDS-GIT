@@ -12,7 +12,7 @@
 - Lưu ý: Kiểm tra tên server ở thư viện RealEstate.BackendApi file appsettings.Dvelopment.json (thư mục con của appsettings.json).
 		 Tạo xử lý Service phải khai báo trong Startup phương thức ConfigureServices
 ## Chạy Api
-- Click chuột phải chọn Set as Startup Project sau đó mới build
+- Click chuột phải RealEstate.BackendApi chọn Set as Startup Project sau đó mới build
 - Để nhập được dữ liệu phải chọn nút Try it out trong mỗi phương thức
 - Hiện tại đã có tài khoản mẫu UserName: admin@gmail.com, Password: Admin@123)
 - Đăng ký tài khoản mới (UserName phải đăng ký dạng email 1 email chỉ đăng ký đc 1 lần, Password phải ít nhất 6 ký tự phải có chữ hoa, chữ thường, số, ký tự đặc biệt)
