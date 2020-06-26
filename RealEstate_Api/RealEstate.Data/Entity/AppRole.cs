@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RealEstate.Data.Entity
 {
-    public class AppRole : IdentityRole<Guid>
+    public class AppRole :IdentityRole<Guid>
     {
         public string Description { get; set; }
     }

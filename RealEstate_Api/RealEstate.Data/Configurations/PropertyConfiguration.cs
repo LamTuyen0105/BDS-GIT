@@ -25,7 +25,6 @@ namespace RealEstate.Data.Configurations
             builder.Property(x => x.Title).HasMaxLength(200).IsRequired();
             builder.Property(x => x.ApartmentNumber).HasMaxLength(200).IsRequired();
             builder.Property(x => x.StreetNames).HasMaxLength(200).IsRequired();
-            builder.Property(x => x.Image).IsRequired();
             builder.Property(x => x.Description).IsRequired();
             builder.Property(x => x.ContactName).HasMaxLength(100);
             builder.Property(x => x.EmailContact).HasMaxLength(100);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l1LhLEjBJNHTf43rjLVs09nmmBtBwFe+sMRxDjaW2iHwmphPYuo5iGyUeGJhi2H6HLvKwme7MKjP2aX/KhKJ/Q==",
+  "dgSpecHash": "r4J3YbqbbJzODwTQTKH/BAWHK/hTbeRJxDpIk8tKrsXEqLk8pHKiZCXrwk7L31J1t/34ZB0hkk8vxTat5zOUlw==",
   "success": true,
   "projectFilePath": "D:\\Information_Technology\\Practice\\Github\\BDS-GIT\\RealEstate_Api\\RealEstate.Data\\RealEstate.Data.csproj",
   "expectedPackageFiles": [
@@ -101,8 +101,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

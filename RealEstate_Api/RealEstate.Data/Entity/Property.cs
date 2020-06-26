@@ -12,7 +12,6 @@ namespace RealEstate.Data.Entity
         public string ApartmentNumber { get; set; }
         public string StreetNames { get; set; }
         public int WardId { get; set; }
-        public string Image { get; set; }
         public double Area { get; set; }
         public double? AreaFrom { get; set; }
         public double? AreaTo { get; set; }
@@ -49,8 +48,7 @@ namespace RealEstate.Data.Entity
         public EvaluationStatus EvaluationStatus { get; set; }
         public AppUser AppUser { get; set; }
 
-        public List<ImageProperty> ImageProperties { get; set; }
+        public List<PropertyImage> PropertyImages { get; set; }
         public List<Favorite> Favorites { get; set; }
-
     }
 }

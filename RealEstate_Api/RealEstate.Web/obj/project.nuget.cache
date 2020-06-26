@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AXVEPDdV7i4FkADxNgeFMxdttf+UHRiWGfqyNUiX1RkRc7I5zI/TvK2C3y0LFeIn/ESzbF1680j97wrTehfRoA==",
+  "dgSpecHash": "CVhq7AYulkJt+ViR6cEZKK2ciaiHHRBqbdRh75wNzgijVNGi7Ht9WuBILtA5G38OViwGeeySB0oZ0Qwcr07yCA==",
   "success": true,
   "projectFilePath": "D:\\Information_Technology\\Practice\\Github\\BDS-GIT\\RealEstate_Api\\RealEstate.Web\\RealEstate.Web.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
