@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.6.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\RealEstate.Data\RealEstate.Data.csproj" />
+    <ProjectReference Include="..\RealEstate.Utilities\RealEstate.Utilities.csproj" />
+    <ProjectReference Include="..\RealEstate.ViewModels\RealEstate.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
