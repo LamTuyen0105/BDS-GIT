@@ -16,3 +16,4 @@
 - Để nhập được dữ liệu phải chọn nút Try it out trong mỗi phương thức
 - Hiện tại đã có tài khoản mẫu UserName: admin@gmail.com, Password: Admin@123)
 - Đăng ký tài khoản mới (UserName phải đăng ký dạng email 1 email chỉ đăng ký đc 1 lần, Password phải ít nhất 6 ký tự phải có chữ hoa, chữ thường, số, ký tự đặc biệt)
+- LƯU Ý: NẾU MUỐN CHẠY BẰNG IP4 KHÔNG CHẠY SWAGGER PHẢI VÀO FILE launchSettings.json TRONG Properties CỦA PROJECT RealEstate.BackendApi THAY "applicationUrl": "http://{IP4}:{port}", TRONG "RealEstate.BackendApi".
