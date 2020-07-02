@@ -28,6 +28,12 @@ namespace RealEstate.Application.Service.NewsManagers
 
         Task<List<PropertyViewModel>> GetAll();
 
+        Task<List<PropertyViewModel>> GetHot();
+
+        Task<List<PropertyViewModel>> GetHotSell();
+
+        Task<List<PropertyViewModel>> GetHotRent();
+
         Task<int> AddImage(int propertyId, PropertyImageCreateRequest request);
 
         Task<int> RemoveImage(int imageId);

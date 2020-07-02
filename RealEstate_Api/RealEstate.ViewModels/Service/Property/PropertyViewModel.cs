@@ -8,7 +8,8 @@ namespace RealEstate.ViewModels.Service.Property
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Name { get; set; }//WardName
+        public string ProvinceName { get; set; }
+        public string DistrictName { get; set; }
         public string LinkName { get; set; }
         public double Area { get; set; }
         public double? AreaFrom { get; set; }
@@ -24,6 +25,8 @@ namespace RealEstate.ViewModels.Service.Property
         public int? NumberOfBedrooms { get; set; }
         public int? NumberOfWCs { get; set; }
         public string DirectionName { get; set; }
+        public string TypeOfPropertyName { get; set; }
+        public string EvaluationStatusName { get; set; }
         public double? Lat { get; set; }
         public double? Lng { get; set; }
         public string ContactName { get; set; }

@@ -27,6 +27,13 @@ namespace RealEstate.BackendApi.Controllers
             return Ok(properties);
         }
 
+        [HttpGet("HotProperties")]
+        public async Task<IActionResult> GetHot()
+        {
+            var properties = await _ownerPropertyService.GetHot();
+            return Ok(properties);
+        }
+
         [HttpGet("ViewPagingByTransaction")]
         public async Task<IActionResult> GetAllPaging([FromQuery] GetViewPropertyPagingRequest request)
         {

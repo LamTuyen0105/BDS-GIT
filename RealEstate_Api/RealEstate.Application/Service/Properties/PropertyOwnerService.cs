@@ -125,11 +125,15 @@ namespace RealEstate.Application.Service.NewsManagers
             var query = from p in _context.Properties
                         join w in _context.Wards on p.WardId equals w.Id
                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                        join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                        join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                        join ds in _context.Districts on w.DistrictId equals ds.Id
+                        join pc in _context.Provinces on ds.ProvinceId equals pc.Id
                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
                         where p.Status == Status.Approved
-                        select new { p, w, tt, d, j };
+                        select new { p, pc, ds, tt, tp, e, d, j };
             if (request.TypeOfTransactionIds.Count > 0)
                 query = query.Where(x => request.TypeOfTransactionIds.Contains(x.tt.Id));
             int totalRow = await query.CountAsync();
@@ -140,7 +144,8 @@ namespace RealEstate.Application.Service.NewsManagers
                 {
                     Id = x.p.Id,
                     Title = x.p.Title,
-                    Name = x.w.Name,
+                    ProvinceName = x.pc.Name,
+                    DistrictName = x.ds.Name,
                     LinkName = x.j.LinkName,
                     Area = x.p.Area,
                     AreaFrom = x.p.AreaFrom,
@@ -156,6 +161,8 @@ namespace RealEstate.Application.Service.NewsManagers
                     NumberOfBedrooms = x.p.NumberOfBedrooms,
                     NumberOfWCs = x.p.NumberOfWCs,
                     DirectionName = x.d.DirectionName,
+                    TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                    EvaluationStatusName = x.e.EvaluationStatusName,
                     Lat = x.p.Lat,
                     Lng = x.p.Lng,
                     ContactName = x.p.ContactName,
@@ -303,16 +310,21 @@ namespace RealEstate.Application.Service.NewsManagers
             var query = from p in _context.Properties
                         join w in _context.Wards on p.WardId equals w.Id
                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                        join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                        join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                        join ds in _context.Districts on w.DistrictId equals ds.Id
+                        join pc in _context.Provinces on ds.ProvinceId equals pc.Id
                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
                         where p.Status == Status.Approved
-                        select new { p, w, tt, d, j };
+                        select new { p, pc, ds, tt, tp, e, d, j };
             var data = await query.Select(x => new PropertyViewModel()
                 {
                     Id = x.p.Id,
                     Title = x.p.Title,
-                    Name = x.w.Name,
+                    ProvinceName = x.pc.Name,
+                    DistrictName = x.ds.Name,
                     Area = x.p.Area,
                     AreaFrom = x.p.AreaFrom,
                     AreaTo = x.p.AreaTo,
@@ -327,6 +339,8 @@ namespace RealEstate.Application.Service.NewsManagers
                     NumberOfBedrooms = x.p.NumberOfBedrooms,
                     NumberOfWCs = x.p.NumberOfWCs,
                     DirectionName = x.d.DirectionName,
+                    TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                    EvaluationStatusName = x.e.EvaluationStatusName,
                     LinkName = x.j.LinkName,
                     Lat = x.p.Lat,
                     Lng = x.p.Lng,
@@ -342,10 +356,14 @@ namespace RealEstate.Application.Service.NewsManagers
             var query = from p in _context.Properties
                         join w in _context.Wards on p.WardId equals w.Id
                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                        join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                        join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                        join ds in _context.Districts on w.DistrictId equals ds.Id
+                        join pc in _context.Provinces on ds.ProvinceId equals pc.Id
                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
-                        select new { p, w, tt, d, j };
+                        select new { p, pc, ds, tt, tp, e, d, j };
             if (request.typeOfTransactionId.HasValue && request.typeOfTransactionId >0)
                 query = query.Where(x => x.p.TypeOfTransactionId == request.typeOfTransactionId);
 
@@ -357,7 +375,8 @@ namespace RealEstate.Application.Service.NewsManagers
                 {
                     Id = x.p.Id,
                     Title = x.p.Title,
-                    Name = x.w.Name,
+                    ProvinceName = x.pc.Name,
+                    DistrictName = x.ds.Name,
                     LinkName = x.j.LinkName,
                     Area = x.p.Area,
                     AreaFrom = x.p.AreaFrom,
@@ -373,6 +392,8 @@ namespace RealEstate.Application.Service.NewsManagers
                     NumberOfBedrooms = x.p.NumberOfBedrooms,
                     NumberOfWCs = x.p.NumberOfWCs,
                     DirectionName = x.d.DirectionName,
+                    TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                    EvaluationStatusName = x.e.EvaluationStatusName,
                     Lat = x.p.Lat,
                     Lng = x.p.Lng,
                     ContactName = x.p.ContactName,
@@ -400,13 +421,14 @@ namespace RealEstate.Application.Service.NewsManagers
                         join w in _context.Wards on p.WardId equals w.Id
                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
                         join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                        join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
                         join d in _context.Directions on p.HouseDirectionId equals d.Id
                         join ds in _context.Districts on w.DistrictId equals ds.Id
                         join pc in _context.Provinces on ds.ProvinceId equals pc.Id
                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
                         where p.Status == Status.Approved
-                        select new { p, w, tt, d, tp, ds, pc, j };
+                        select new { p, w, tt, d, tp, e, ds, pc, j };
             if (request.typeOfTransactionId > 0)
                 query = query.Where(x => x.p.TypeOfTransactionId == request.typeOfTransactionId);
             if (request.typeOfPropertyId.HasValue && request.typeOfPropertyId > 0)
@@ -436,7 +458,8 @@ namespace RealEstate.Application.Service.NewsManagers
                 {
                     Id = x.p.Id,
                     Title = x.p.Title,
-                    Name = x.w.Name,
+                    ProvinceName = x.pc.Name,
+                    DistrictName = x.ds.Name,
                     LinkName = x.j.LinkName,
                     Area = x.p.Area,
                     AreaFrom = x.p.AreaFrom,
@@ -452,6 +475,8 @@ namespace RealEstate.Application.Service.NewsManagers
                     NumberOfBedrooms = x.p.NumberOfBedrooms,
                     NumberOfWCs = x.p.NumberOfWCs,
                     DirectionName = x.d.DirectionName,
+                    TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                    EvaluationStatusName = x.e.EvaluationStatusName,
                     Lat = x.p.Lat,
                     Lng = x.p.Lng,
                     ContactName = x.p.ContactName,
@@ -471,10 +496,14 @@ namespace RealEstate.Application.Service.NewsManagers
             var query = from p in _context.Properties
                         join w in _context.Wards on p.WardId equals w.Id
                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                        join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                        join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                        join ds in _context.Districts on w.DistrictId equals ds.Id
+                        join pc in _context.Provinces on ds.ProvinceId equals pc.Id
                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
-                        select new { p, w, tt, d, j };
+                        select new { p, ds, pc, tt, tp, e, d, j };
 
             int totalRow = await query.CountAsync();
 
@@ -484,7 +513,8 @@ namespace RealEstate.Application.Service.NewsManagers
                 {
                     Id = x.p.Id,
                     Title = x.p.Title,
-                    Name = x.w.Name,
+                    ProvinceName = x.pc.Name,
+                    DistrictName = x.ds.Name,
                     LinkName = x.j.LinkName,
                     Area = x.p.Area,
                     AreaFrom = x.p.AreaFrom,
@@ -500,6 +530,8 @@ namespace RealEstate.Application.Service.NewsManagers
                     NumberOfBedrooms = x.p.NumberOfBedrooms,
                     NumberOfWCs = x.p.NumberOfWCs,
                     DirectionName = x.d.DirectionName,
+                    TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                    EvaluationStatusName = x.e.EvaluationStatusName,
                     Lat = x.p.Lat,
                     Lng = x.p.Lng,
                     ContactName = x.p.ContactName,
@@ -512,6 +544,144 @@ namespace RealEstate.Application.Service.NewsManagers
                 Items = data
             };
             return pagedResult;
+        }
+
+        public async Task<List<PropertyViewModel>> GetHot()
+        {
+            var query = (from p in _context.Properties
+                         join w in _context.Wards on p.WardId equals w.Id
+                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                         join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                         join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
+                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                         join ds in _context.Districts on w.DistrictId equals ds.Id
+                         join pc in _context.Provinces on ds.ProvinceId equals pc.Id
+                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
+                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
+                         where p.Status == Status.Approved
+                         select new { p, ds, pc, tt, tp, e, d, j }).Take(8);
+            var data = await query.Select(x => new PropertyViewModel()
+            {
+                Id = x.p.Id,
+                Title = x.p.Title,
+                ProvinceName = x.pc.Name,
+                DistrictName = x.ds.Name,
+                Area = x.p.Area,
+                AreaFrom = x.p.AreaFrom,
+                AreaTo = x.p.AreaTo,
+                Length = x.p.Length,
+                Width = x.p.Width,
+                Facade = x.p.Facade,
+                Price = x.p.Price,
+                PriceFrom = x.p.PriceFrom,
+                PriceTo = x.p.PriceTo,
+                Description = x.p.Description,
+                NumberOfStoreys = x.p.NumberOfStoreys,
+                NumberOfBedrooms = x.p.NumberOfBedrooms,
+                NumberOfWCs = x.p.NumberOfWCs,
+                DirectionName = x.d.DirectionName,
+                TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                EvaluationStatusName = x.e.EvaluationStatusName,
+                LinkName = x.j.LinkName,
+                Lat = x.p.Lat,
+                Lng = x.p.Lng,
+                ContactName = x.p.ContactName,
+                EmailContact = x.p.EmailContact,
+                ContactPhone = x.p.ContactPhone
+            }).ToListAsync();
+            return data;
+        }
+
+        public async Task<List<PropertyViewModel>> GetHotSell()
+        {
+            var query = (from p in _context.Properties
+                         join w in _context.Wards on p.WardId equals w.Id
+                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                         join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                         join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
+                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                         join ds in _context.Districts on w.DistrictId equals ds.Id
+                         join pc in _context.Provinces on ds.ProvinceId equals pc.Id
+                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
+                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
+                         where p.Status == Status.Approved && tt.Id == 1
+                         select new { p, ds, pc, tt, tp, e, d, j }).Take(8);
+            var data = await query.Select(x => new PropertyViewModel()
+            {
+                Id = x.p.Id,
+                Title = x.p.Title,
+                ProvinceName = x.pc.Name,
+                DistrictName = x.ds.Name,
+                Area = x.p.Area,
+                AreaFrom = x.p.AreaFrom,
+                AreaTo = x.p.AreaTo,
+                Length = x.p.Length,
+                Width = x.p.Width,
+                Facade = x.p.Facade,
+                Price = x.p.Price,
+                PriceFrom = x.p.PriceFrom,
+                PriceTo = x.p.PriceTo,
+                Description = x.p.Description,
+                NumberOfStoreys = x.p.NumberOfStoreys,
+                NumberOfBedrooms = x.p.NumberOfBedrooms,
+                NumberOfWCs = x.p.NumberOfWCs,
+                DirectionName = x.d.DirectionName,
+                TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                EvaluationStatusName = x.e.EvaluationStatusName,
+                LinkName = x.j.LinkName,
+                Lat = x.p.Lat,
+                Lng = x.p.Lng,
+                ContactName = x.p.ContactName,
+                EmailContact = x.p.EmailContact,
+                ContactPhone = x.p.ContactPhone
+            }).ToListAsync();
+            return data;
+        }
+
+        public async Task<List<PropertyViewModel>> GetHotRent()
+        {
+            var query = (from p in _context.Properties
+                         join w in _context.Wards on p.WardId equals w.Id
+                         join tt in _context.TypeOfTransactions on p.TypeOfTransactionId equals tt.Id
+                         join tp in _context.TypeOfProperties on p.TypeOfPropertyId equals tp.Id
+                         join e in _context.EvaluationStatuses on p.EvaluationStatusId equals e.Id
+                         join d in _context.Directions on p.HouseDirectionId equals d.Id
+                         join ds in _context.Districts on w.DistrictId equals ds.Id
+                         join pc in _context.Provinces on ds.ProvinceId equals pc.Id
+                         join i in _context.PropertyImages on p.Id equals i.PropertyId into joined
+                         from j in (from i in joined where i.IsDefault == true select i).DefaultIfEmpty()
+                         where p.Status == Status.Approved && tt.Id == 2
+                         select new { p, ds, pc, tt, tp, e, d, j }).Take(8);
+            var data = await query.Select(x => new PropertyViewModel()
+            {
+                Id = x.p.Id,
+                Title = x.p.Title,
+                ProvinceName = x.pc.Name,
+                DistrictName = x.ds.Name,
+                Area = x.p.Area,
+                AreaFrom = x.p.AreaFrom,
+                AreaTo = x.p.AreaTo,
+                Length = x.p.Length,
+                Width = x.p.Width,
+                Facade = x.p.Facade,
+                Price = x.p.Price,
+                PriceFrom = x.p.PriceFrom,
+                PriceTo = x.p.PriceTo,
+                Description = x.p.Description,
+                NumberOfStoreys = x.p.NumberOfStoreys,
+                NumberOfBedrooms = x.p.NumberOfBedrooms,
+                NumberOfWCs = x.p.NumberOfWCs,
+                DirectionName = x.d.DirectionName,
+                TypeOfPropertyName = x.tp.TypeOfPropertyName,
+                EvaluationStatusName = x.e.EvaluationStatusName,
+                LinkName = x.j.LinkName,
+                Lat = x.p.Lat,
+                Lng = x.p.Lng,
+                ContactName = x.p.ContactName,
+                EmailContact = x.p.EmailContact,
+                ContactPhone = x.p.ContactPhone
+            }).ToListAsync();
+            return data;
         }
     }
 }
