@@ -57,7 +57,7 @@ namespace RealEstate.BackendApi.Controllers
         [HttpGet("TypeOfTransaction")]
         public async Task<IActionResult> GetTypeOfTransaction()
         {
-            var typeOfTransaction = await _getSampleDataService.GetEvaluationStatus();
+            var typeOfTransaction = await _getSampleDataService.GetTypeOfTransaction();
             return Ok(typeOfTransaction);
         }
 

@@ -11,5 +11,9 @@ namespace RealEstate.Application.System.Users
         Task<string> Authencate(LoginRequest request);
 
         Task<bool> Register(RegisterRequest request);
+
+        Task<List<UserViewModel>> GetAll();
+
+        Task<UserViewModel> GetById(Guid userId);
     }
 }

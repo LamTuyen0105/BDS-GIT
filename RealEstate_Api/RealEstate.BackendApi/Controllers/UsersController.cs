@@ -50,5 +50,21 @@ namespace RealEstate.BackendApi.Controllers
             }
             return Ok();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var users = await _userService.GetAll();
+            return Ok(users);
+        }
+
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetById(Guid userId)
+        {
+            var users = await _userService.GetById(userId);
+            if (users == null)
+                return BadRequest("Không tìm thấy được tin đăng");
+            return Ok(users);
+        }
     }
 }
