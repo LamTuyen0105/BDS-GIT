@@ -1,0 +1,28 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:65089",
+      "sslPort": 44396
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "RealEstate.BackendApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000", //Muốn chạy wifi xóa cái đầu là https://localhost:5001 (có thể xóa thêm nếu muốn do sẽ ko bị lỗi khi "launchUrl": "swagger", không dùng swagger nên có thể gỡ thư viện cài đặt và trong startup);giữ cái sau 192.168.2.61 là ip address 4. LƯU Ý: chỉ chạy được 1 cái và chỉ chạy http.
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
